@@ -1,0 +1,27 @@
+<div class="page-header">
+    <h2>Lista utenti</h2>
+  </div>
+  <div>
+  <table class="table table-striped" style="margin-top: 50px;">
+    <thead>
+      <th>id</th>
+      <th>Nome</th>
+      <th>Cognome</th>
+      <th>Username</th>
+      <th>Delete</th>
+      <th>Update</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of utenti">
+        <td>{{u.id}}</td>
+        <td>{{u.nome}}</td>
+        <td>{{u.cognome}}</td>
+        <td>{{u.username}}</td>
+        <td><button class="btn btn-danger btn-sm" (click)="deleteUtente(u)">Delete</button></td>
+        <td><button class="btn btn-warning btn-sm" (click)="updateUtente(u)">Update</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" style="margin-top: 50px;"
+  (click)="createUtente()">Nuovo Utente</button>
+  </div>
